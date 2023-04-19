@@ -1,5 +1,5 @@
 .container {
-  width: 50%;
+  width: 90%;
   border-radius: 15px;
   margin: 0 auto;
   padding: 20px;
@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: 24px;
   color: rgba(0, 0, 0, .87);
   margin-bottom: 30px;
   text-align: center;
