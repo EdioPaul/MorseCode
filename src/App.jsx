@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1 className="title">Morse Code</h1>
+      <h1 className="title">Código Morse</h1>
       <img className="icon" src={morsecodeicon} alt="morse code icon" />
       <form id="form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -82,8 +82,8 @@ const App = () => {
         <div className="form-group">
           <div className='code'>{values.morse}</div>
         </div>
-        <button type="submit" class="btn">Morse</button>
-        <button className="btn-clear" onClick={() => clear()}>Clear</button>
+        <button type="submit" class="btn">Enviar</button>
+        <button className="btn-clear" onClick={() => clear()}>Limpar</button>
       </form>
       <img className="img" src={morsecode} alt="morse code" />
     </div>
