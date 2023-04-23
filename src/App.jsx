@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import morseCode from './morseCode'
+import stringCode from './stringCode'
 import morsecode from './morsecode.svg'
 import morsecodeicon from './morsecodeicon.svg'
 
@@ -19,12 +20,15 @@ const App = () => {
     
     event.preventDefault()
     const { str } = values
-    const message = str || ''
-    const morse = message.toUpperCase().split("").map(element => {
+    const code = str || ''
+    const morse = code.toUpperCase().split("").map(element => {
       return morseCode[element] ? morseCode[element] : element
     }).join("")
-    
-    setValues({ morse })
+
+    const message = code.split(" ").map(element => {
+      return stringCode[element] ? stringCode[element] : element
+    }).join("")
+    setValues({ morse, message })
     
     const AudioContext = window.AudioContext || window.webkitAudioContext
     const context = new AudioContext()
@@ -79,8 +83,12 @@ const App = () => {
             onChange={handleChange}
           />
         </div>
+        <div>Letras em código Morse devem ser separadas por espaço</div>
         <div className="form-group">
           <div className='code'>{values.morse}</div>
+        </div>
+        <div className="form-group">
+          <div className='message'>{values.message}</div>
         </div>
         <button type="submit" class="btn">Enviar</button>
         <button className="btn-clear" onClick={() => clear()}>Limpar</button>
